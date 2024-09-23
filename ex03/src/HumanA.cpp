@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 18:08:37 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/23 19:09:45 by pcervill         ###   ########.fr       */
+/*   Created: 2024/09/23 18:25:04 by pcervill          #+#    #+#             */
+/*   Updated: 2024/09/23 19:11:02 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include "../include/HumanA.hpp"
 
-#include <iostream>
-#include <string>
-
-class Weapon
+HumanA::HumanA(std::string _name, Weapon &_weapon) : weapon(_weapon)
 {
-	private:
-		std::string type;
-	public:
-		Weapon(std::string type);
-		~Weapon(void);
+	name = _name;
+}
 
-		std::string const	getType(void);
-		void				setType(std::string _type);
-};
+HumanA::~HumanA()
+{
+}
 
-#endif
+void HumanA::attack()
+{
+	if (weapon.getType().empty())
+		std::cout << name << " has no weapon" << std::endl;
+	else
+		std::cout << name << " attack with their " << weapon.getType() << std::endl;
+}
