@@ -6,21 +6,19 @@
 #    By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/23 16:56:43 by pcervill          #+#    #+#              #
-#    Updated: 2024/09/23 17:01:44 by pcervill         ###   ########.fr        #
+#    Updated: 2024/09/23 17:49:32 by pcervill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= zombieHorde
+NAME	= Brain
 
 SRC		= main.cpp 
 
-SRC_DIR	= ./src/
-
-OBJ		= $(addprefix $(SRC_DIR), $(SRC:.cpp=.o))
+OBJ		= $(SRC:.cpp=.o)
 
 CC		= clang++
 
-CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address -g3 -std=c++98
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address -g3
 
 %.o: %.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
