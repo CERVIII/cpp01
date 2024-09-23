@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   stoi.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 13:56:30 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/23 16:04:02 by pcervill         ###   ########.fr       */
+/*   Created: 2024/09/23 16:30:34 by pcervill          #+#    #+#             */
+/*   Updated: 2024/09/23 16:31:44 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#include <iostream>
+#include <string>
+#include <sstream>
 
-void randomChump(std::string name)
-{
-	Zombie zombie2(name);
-	zombie2.announce();
+static int stoi( std::string & s ) {
+	int i;
+	std::istringstream(s) >> i;
+	return i;
 }

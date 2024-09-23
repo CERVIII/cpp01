@@ -6,7 +6,7 @@
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:57:31 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/19 14:17:03 by pcervill         ###   ########.fr       */
+/*   Updated: 2024/09/23 13:08:51 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Zombie	*newZombie(std::string name)
 {
-	Zombie	*zombie1  = new Zombie(name);
+	Zombie	*zombie1;
+
+	zombie1 = new Zombie(name);
 	return (zombie1);
 }

@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   to_string.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 13:56:30 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/23 16:04:02 by pcervill         ###   ########.fr       */
+/*   Created: 2024/09/23 16:32:04 by pcervill          #+#    #+#             */
+/*   Updated: 2024/09/23 16:32:19 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#include <iostream>
+#include <string>
+#include <sstream>
 
-void randomChump(std::string name)
-{
-	Zombie zombie2(name);
-	zombie2.announce();
+static std::string to_string( int i ) {
+	std::ostringstream oss;
+	oss << i;
+	return oss.str();
 }
