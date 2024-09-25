@@ -6,7 +6,7 @@
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:34:21 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/24 17:36:55 by pcervill         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:03:24 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,51 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	fileOut.open(filename.c_str(), std::ios::out);
-	while (fileIn >> s1)
+	while (!fileIn.eof())
 	{
+		std::getline(fileIn, s1);
 		i = 0;
-		while (s1[i])
+		while (s1.c_str()[i])
 		{
 			j = 0;
-			while (s1[i] == argv[2][j])
+			if (s1.c_str()[i] == argv[2][0])
 			{
-				i++;
-				j++;
-				if (!argv[2][j])
+				while (s1.c_str()[i] == argv[2][j])
 				{
-					fileOut << argv[3];
-					break;
+					i++;
+					j++;
+					if (!argv[2][j])
+					{
+//						std::cout << argv[3];
+						fileOut << argv[3];
+						break;
+					}
+					else if (s1.c_str()[i] != argv[2][j])
+					{
+						while (j > 0)
+						{
+//							std::cout << s1.c_str()[i - j--];
+							fileOut << s1.c_str()[i - j--];
+						}
+						break;
+					}
 				}
 			}
-			fileOut << s1[i++];
+			else
+			{
+//				std::cout << s1.c_str()[i];
+				fileOut << s1.c_str()[i++];
+			}
 		}
-		
-		fileOut << " ";
+		if (fileIn.eof())
+			break;
+		else
+		{
+//			std::cout << std::endl;
+			fileOut << std::endl;
+		}
 	}
+	fileIn.close();
+	fileOut.close();
 	return (0);
 }
