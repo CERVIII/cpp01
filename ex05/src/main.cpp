@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 18:36:17 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/25 16:58:38 by pcervill         ###   ########.fr       */
+/*   Created: 2024/09/25 16:46:01 by pcervill          #+#    #+#             */
+/*   Updated: 2024/09/25 17:11:35 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/HumanA.hpp"
-#include "../include/HumanB.hpp"
+#include "../include/Harl.hpp"
 #include <iomanip>
 
 void	num_ex(std::string ex)
@@ -27,27 +26,25 @@ void	num_ex(std::string ex)
 	std::cout << std::endl;
 }
 
-int main (void)
+int	main(void)
 {
-	num_ex("ex03");
-	{
-		Weapon club = Weapon("Snife");
+	Harl	harl;
 
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
+	num_ex("ex05");
+	std::cout << "comment DEBUG:" << std::endl;
+	harl.complain("debug");
 	std::cout << std::endl;
-	{
-		Weapon club = Weapon("Gun");
-		HumanB jim("Jim");
-		jim.attack();
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-
+	std::cout << "comment INFO:" << std::endl;
+	harl.complain("info");
+	std::cout << std::endl;
+	std::cout << "comment WARNING:" << std::endl;
+	harl.complain("warning");
+	std::cout << std::endl;
+	std::cout << "comment ERROR:" << std::endl;
+	harl.complain("error");
+	std::cout << std::endl;
+	std::cout << "comment RANDOM:" << std::endl;
+	harl.complain("hoolaaa");
+	std::cout << std::endl;
 	return (0);
 }
