@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   File.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 13:42:58 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/23 16:13:07 by pcervill         ###   ########.fr       */
+/*   Created: 2025/11/30 21:55:26 by pcervill          #+#    #+#             */
+/*   Updated: 2025/11/30 21:58:52 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#ifndef FILE_HPP
+# define FILE_HPP
 
-Zombie::Zombie()
-{
-}
+#include <iostream>
+#include <fstream>
+#include <string>
 
-Zombie::Zombie(std::string _name)
+class File
 {
-	name = _name;
-}
+	private:
+		std::string outfile;
+		std::string infile;
+	public:
+		File(std::string filename);
+		~File();
+		void	replace(std::string s1, std::string s2);
+};
 
-Zombie::~Zombie()
-{
-	std::cout << name << " deleted!" << std::endl;
-}
-
-void Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#endif

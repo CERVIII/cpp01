@@ -1,2 +1,9 @@
-.vscode/*
 *.o
+*subject*
+.DS_Store
+zombie
+zombieHorde
+Brain
+Weapon
+Replace
+*.replace

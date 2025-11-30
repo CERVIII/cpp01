@@ -6,11 +6,11 @@
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:25:11 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/23 16:47:39 by pcervill         ###   ########.fr       */
+/*   Updated: 2025/11/30 20:57:46 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#include "./Zombie.hpp"
 
 Zombie	*zombieHorde(int N, std::string name)
 {
@@ -22,7 +22,7 @@ Zombie	*zombieHorde(int N, std::string name)
 	zombies = new Zombie[N];
 	while (i < N)
 	{
-		zombies[i].setZombie(name + to_string(i + 1));
+		zombies[i].setZombie(name);
 		i++;
 	}
 	std::cout << std::endl;

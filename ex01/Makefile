@@ -6,21 +6,19 @@
 #    By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:15:10 by pcervill          #+#    #+#              #
-#    Updated: 2024/09/23 17:49:55 by pcervill         ###   ########.fr        #
+#    Updated: 2025/11/30 21:30:40 by pcervill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= zombieHorde
 
-SRC		= main.cpp newZombie.cpp Zombie.cpp randomChump.cpp zombieHorde.cpp
+SRC		= main.cpp Zombie.cpp zombieHorde.cpp
 
-SRC_DIR	= ./src/
-
-OBJ		= $(addprefix $(SRC_DIR), $(SRC:.cpp=.o))
+OBJ		= $(SRC:.cpp=.o)
 
 CC		= clang++
 
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address -g3
+CFLAGS	=  -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 
 %.o: %.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@

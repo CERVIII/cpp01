@@ -6,45 +6,24 @@
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:55:14 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/23 16:56:14 by pcervill         ###   ########.fr       */
+/*   Updated: 2025/11/30 21:32:18 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
-
-std::string to_string( int i ) {
-	std::ostringstream oss;
-	oss << i;
-	return oss.str();
-}
-
-void	num_ex(std::string ex)
-{
-	std::string boxUp, boxDwn;
-	
-	boxUp = "┌──────────────────────────────────────┐";
-	boxDwn = "└──────────────────────────────────────┘";
-	std::cout << boxUp << std::endl;
-	std::cout << "│" << std::setw(20) << ex;
-	std::cout << std::setw(21) << "│" << std::endl;
-	std::cout << boxDwn << std::endl;
-	std::cout << std::endl;
-}
+#include "./Zombie.hpp"
 
 int	main (void)
 {
 	Zombie	*Horde;
 	std::string name;
-	int		i, x;
+	int		i, n;
 
-	num_ex("EX01");
-	i = 5;
-	Horde = zombieHorde(i, "Zombie_");
-	x = 0;
-	while (x < i)
-		Horde[x++].announce();
+	n = 5;
+	Horde = zombieHorde(n, "Zombie");
+	i = 0;
+	while (i < n)
+		Horde[i++].announce();
 	std::cout << std::endl;
-	x = 0;
 	delete[] Horde;
 	return (0);
 }

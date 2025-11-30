@@ -6,11 +6,11 @@
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 15:29:30 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/25 16:40:05 by pcervill         ###   ########.fr       */
+/*   Updated: 2025/11/30 23:45:54 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Harl.hpp"
+#include "./Harl.hpp"
 
 Harl::Harl()
 {

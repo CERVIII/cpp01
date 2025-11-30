@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 13:42:58 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/23 16:47:24 by pcervill         ###   ########.fr       */
+/*   Created: 2024/09/23 18:08:37 by pcervill          #+#    #+#             */
+/*   Updated: 2025/11/30 21:44:44 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-Zombie::Zombie()
-{
-}
+#include <iostream>
+#include <string>
 
-Zombie::Zombie(std::string _name)
+class Weapon
 {
-	name = _name;
-}
+	private:
+		std::string type;
+	public:
+		Weapon(std::string type);
+		~Weapon(void);
 
-void Zombie::setZombie(std::string _name)
-{
-	name = _name;
-	std::cout << name << " created!" << std::endl;
-}
+		const std::string	&getType(void);
+		void				setType(std::string _type);
+};
 
-Zombie::~Zombie()
-{
-	std::cout << name << " deleted!" << std::endl;
-}
-
-void Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#endif

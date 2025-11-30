@@ -6,7 +6,7 @@
 #    By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/23 17:00:58 by pcervill          #+#    #+#              #
-#    Updated: 2024/09/23 19:03:50 by pcervill         ###   ########.fr        #
+#    Updated: 2025/11/30 21:47:39 by pcervill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,11 @@ NAME	= Weapon
 
 SRC		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
-SRC_DIR	= ./src/
-
-OBJ		= $(addprefix $(SRC_DIR), $(SRC:.cpp=.o))
+OBJ		= $(SRC:.cpp=.o)
 
 CC		= clang++
 
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address -g3
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address -g3
 
 %.o: %.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@

@@ -6,25 +6,12 @@
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:02:18 by pcervill          #+#    #+#             */
-/*   Updated: 2024/09/25 16:56:28 by pcervill         ###   ########.fr       */
+/*   Updated: 2025/11/30 21:10:10 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
-
-void	num_ex(std::string ex)
-{
-	std::string boxUp, boxDwn;
-	
-	boxUp = "┌──────────────────────────────────────┐";
-	boxDwn = "└──────────────────────────────────────┘";
-	std::cout << boxUp << std::endl;
-	std::cout << "│" << std::setw(20) << ex;
-	std::cout << std::setw(21) << "│" << std::endl;
-	std::cout << boxDwn << std::endl;
-	std::cout << std::endl;
-}
 
 int main()
 {
@@ -32,7 +19,6 @@ int main()
 	std::string *stringPTR;
 	std::string &stringREF = str;
 
-	num_ex("ex02");
 	str = "HI THIS IS BRAIN";
 	stringPTR = &str;
 
